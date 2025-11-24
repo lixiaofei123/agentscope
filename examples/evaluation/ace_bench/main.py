@@ -5,6 +5,9 @@ import asyncio
 from argparse import ArgumentParser
 from typing import Callable
 
+
+
+
 from agentscope.message import Msg
 from agentscope.model import DashScopeChatModel
 from agentscope.formatter import DashScopeChatFormatter
