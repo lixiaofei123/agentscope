@@ -37,6 +37,7 @@ dependencies = [
     "shortuuid",
     "tiktoken",
     "sounddevice",
+    "python-frontmatter",
 ]
 
 [project.optional-dependencies]
@@ -57,7 +58,9 @@ full = [
     "pypdf",
     "python-docx",
     "nltk",
-    "qdrant-client",
+    # The qdrant-client >= 1.16.0 has conflicts with pymilvus, so we fix
+    # the version to 1.15.1 here.
+    "qdrant-client==1.15.1",
 ]
 dev = [
     # Include full dependencies from local package
@@ -65,12 +68,12 @@ dev = [
     # Development tools
     "pre-commit",
     "pytest",
+    "pytest-forked",
     "sphinx-gallery",
     "furo",
     "myst_parser",
     "matplotlib",
     "pymilvus[milvus_lite]",
-    # Long-term memory
 ]
 
 [project.urls]
